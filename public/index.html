@@ -1,60 +1,58 @@
+
+
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sistem za spremljanje produktivnosti</title>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Sistem za spremljanje produktivnosti</title>
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link href="css/styles.css" rel="stylesheet">
+      <link href="css/bootstrap-theme.css" rel="stylesheet">
+      <!--Icons-->
+      <script src="js/lumino.glyphs.js"></script>
+      <script src="knjiznice/jQuery-v2.1.4/jQuery-v2.1.4.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/koda.js"></script>
+   </head>
+   <body style="">
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="padding-top:5px; padding-bottom:5px;">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button> 
+               <a class="navbar-brand" href="#" style="font-size: 19px;"><b>Sistem za spremljanje produktivnosti</b></a>
+               <ul class="user-menu">
+                  <li class="dropdown pull-right">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="slike/user.png" style="height:26px;margin-right:6px;"> Admin <span class="caret"></span></a>
+                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user" style="padding-right:5px;"></span> Profil</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog" style="padding-right:5px;"></span> Nastavitve</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out" style="padding-right:5px;"></span> Odjava</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <!-- /.container-fluid -->
+      </nav>
 
-
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-<link href="css/bootstrap-theme.css" rel="stylesheet">
-<!--Icons-->
-<script src="js/lumino.glyphs.js"></script>
-<script src="knjiznice/jQuery-v2.1.4/jQuery-v2.1.4.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/koda.js"></script>
-
-</head>
-
-<body style="background-color: rgba(#D2D3D4,0.20 );">
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="padding-top:5px; padding-bottom:5px;">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button> 
-				<a class="navbar-brand" href="#" style="font-size: 19px;"><b>Sistem za spremljanje produktivnosti</b></a>
-				<ul class="user-menu">
-					<li class="dropdown pull-right">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="slike/user.png" style="height:26px;margin-right:6px;"> Admin <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#"><span class="glyphicon glyphicon-user" style="padding-right:5px;"></span> Profil</a></li>
-							<li><a href="#"><span class="glyphicon glyphicon-cog" style="padding-right:5px;"></span> Nastavitve</a></li>
-							<li><a href="#"><span class="glyphicon glyphicon-log-out" style="padding-right:5px;"></span> Odjava</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-							
-		</div><!-- /.container-fluid -->
-	</nav>
+     <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		
-	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" style="background-color: rgba(116,119,120, 0.2);">
-		
-		<ul class="nav menu" style="margin-top:25px; >
-			<li class="active"><a href="index.html"><span  class="glyphicon glyphicon-home"></span> Glavna stran</a></li>
+		<ul class="nav menu" style="margin-top:25px;" >
+			<li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span> Glavna stran</a></li>
 
-			<li class="parent " >
-				<a href="#" >
-					<span id="Oddelki" data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Oddelki 
+			<li class="parent ">
+				<a href="#">
+					<span data-toggle="collapse" href="#sub-item-1" id="oddelki"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Oddelki
 				</a>
-				<ul class="children collapse" id="sub-item-1" >
-					<li >
-						<a class="" href="index.html">
+				<ul class="children collapse" id="sub-item-1">
+					<li>
+						<a class="" href="#">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Klavnica
 						</a>
 					</li>
@@ -77,212 +75,337 @@
 			</li>
 
 			<li><a href="widgets.html"><span class="glyphicon glyphicon-inbox"></span> Arhiv poročil</a></li>
+			
+			
+			
 		</ul>
 
-	</div><!--/.sidebar-->
-		
-	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
-		<div class="row" style="margin-top:25px;">
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-				<div class="panel panel-info" >
-			      <div class="panel-heading"><span>Klavnica</span></div>
-			      <div class="panel-body">
-			      	<table class="table table-hover">
-					    <tbody>
-					    	
-					       <tr  class="success">
-					        <td>Status poročila</td>
-					        <td>Usvarjeno (prenesi <img src="slike/pdf.png" style="display:inline; height:25px;"> )</td>
-					      </tr>
-					      <tr>
-					        <td>Status potrditve</td>
-					        <td>Nepotrjeno</td>
-					      </tr>
-					      <tr>
-					        <td>Ustvaril/Spremenil</td>
-					        <td>Aljoša Pegan</td>
-					      </tr>
-					      <tr>
-					        <td>Zadnje spremembe</td>
-					        <td>ponedeljek, 12.9.2016 7:50</td>
-					      </tr>
-					    </tbody>
-					  </table>
-			      </div>
-			    </div>
-			</div>
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-				<div class="panel panel-info">
-			      <div class="panel-heading">Filetiranje prsa</div>
-			      <div class="panel-body">
-			      	<table class="table table-hover">
-					    <tbody>
-					 
-					     <tr  class="success">
-					        <td>Status poročila</td>
-					        <td>Usvarjeno (prenesi <img src="slike/pdf.png" style="display:inline; height:25px;"> )</td>
-					      </tr>
-					      <tr>
-					        <td>Status potrditve</td>
-					        <td>Nepotrjeno</td>
-					      </tr>
-					      <tr>
-					        <td>Ustvaril/Spremenil</td>
-					        <td>Aljoša Pegan</td>
-					      </tr>
-					      <tr>
-					        <td>Zadnje spremembe</td>
-					        <td>ponedeljek, 12.9.2016 7:50</td>
-					      </tr>
-					    </tbody>
-					  </table>
-			      </div>
-			    </div>
-			</div>
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-				<div class="panel panel-info">
-			      <div class="panel-heading">Filetiranje SZD</div>
-			      <div class="panel-body">
-			      	<table class="table table-hover">
-					    <tbody>
-					  
-					      <tr class="danger">
-					        <td>Status poročila</td>
-					        <td>Ni podatkov</td>
-					      </tr>
-					      <tr>
-					        <td>Status potrditve</td>
-					        <td>Nepotrjeno</td>
-					      </tr>
-					      <tr>
-					        <td>Ustvaril/Spremenil</td>
-					        <td>Aljoša Pegan</td>
-					      </tr>
-					      <tr>
-					        <td>Zadnje spremembe</td>
-					        <td>ponedeljek, 12.9.2016 7:50</td>
-					      </tr>
-					    </tbody>
-					  </table>
-			      </div>
-			    </div>
-			</div>
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-				<div class="panel panel-info">
-			      <div class="panel-heading">Filetiranje beder</div>
-			      <div class="panel-body">
-			      	<table class="table table-hover">
-					    <tbody>
-					   
-					       <tr  class="success">
-					        <td>Status poročila</td>
-					        <td>Usvarjeno (prenesi <img src="slike/pdf.png" style="display:inline; height:25px;"> )</td>
-					      </tr>
-					      <tr>
-					        <td>Status potrditve</td>
-					        <td>Nepotrjeno</td>
-					      </tr>
-					      <tr>
-					        <td>Ustvaril/Spremenil</td>
-					        <td>Aljoša Pegan</td>
-					      </tr>
-					      <tr>
-					        <td>Zadnje spremembe</td>
-					        <td>ponedeljek, 12.9.2016 7:50</td>
-					      </tr>
-					    </tbody>
-					  </table>
-			      </div>
-			    </div>
-			</div>
-		</div><!--/.row-->
-	
-		<!-- KLAVNICA -->
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<div class="panel panel-info" >
-			      <div class="panel-heading">
-			      		<span>Klavnica</span>
-			      </div>
-			     
-			      <div class="panel-body">
-			      	<div class="alert alert-success">
-					  Prosimo, da vnesete zahtevane podatke za prejšnji dan, vnašanje je mogoče do 8:00.
-					  <button type="button" class="btn btn-success" style="float:right; margin-top:10px,"><span class="glyphicon glyphicon-plus"></span> Vnesi podatke </button>
-					</div>
-			      	
-			      	<div >
-					<h4>Poročilo (ponedeljek, 12.9.2016)</h4>
-					<br>
-					
-				     </div>
-				     <div class="row">
-					     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-								<table class="table table-hover">
-								    <tbody>
-								   
-								       <tr>
-								        <td>Oddelek</td>
-								        <td>Klavnica</td>
-								      </tr>
-								      <tr>
-								        <td>Status potrditve</td>
-								        <td>Nepotrjeno</td>
-								      </tr>
-								      <tr>
-								        <td>Ustvaril/Spremenil</td>
-								        <td>Aljoša Pegan</td>
-								      </tr>
-								      <tr>
-								        <td>Zadnje spremembe</td>
-								        <td>ponedeljek, 12.9.2016 7:50</td>
-								      </tr>
-								    </tbody>
-								  </table>
-							</div>
-						</div>
-						<br>
-						<div class="row">
-					     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-								<table class="table table-hover">
-								    <tbody>
-								   
-								       <tr>
-								        <td>Komadi zaklani</td>
-								        <td>4000 kom.</td>
-								      </tr>
-								      <tr>
-								        <td>Porabljene ure</td>
-								        <td>5 ur</td>
-								      </tr>
-								      <tr>
-								        <td>Normativ produktivnosti</td>
-								        <td>4300</td>
-								      </tr>
-								      <tr>
-								        <td>Dejanska produktvinost</td>
-								        <td>4120</td>
-								      </tr>
-								    </tbody>
-								  </table>
-							</div>
-						</div>		
-				      </div>
-			      
+	</div>
 
-				
-			    
-			    </div>
+      <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+         <div class="row" style="margin-top:25px;">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+               <div class="panel panel-info" >
+                  <div class="panel-heading"><span>Klavnica</span></div>
+                  <div class="panel-body">
+                     <table class="table table-hover">
+                        <tbody>
+                           <tr  class="success">
+                              <td>Status poročila</td>
+                              <td>Usvarjeno (prenesi <img src="slike/pdf.png" style="display:inline; height:25px;"> )</td>
+                           </tr>
+                           <tr>
+                              <td>Status potrditve</td>
+                              <td>Nepotrjeno</td>
+                           </tr>
+                           <tr>
+                              <td>Ustvaril/Spremenil</td>
+                              <td>Aljoša Pegan</td>
+                           </tr>
+                           <tr>
+                              <td>Zadnje spremembe</td>
+                              <td>ponedeljek, 12.9.2016 7:50</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+               <div class="panel panel-info">
+                  <div class="panel-heading">Filetiranje prsa</div>
+                  <div class="panel-body">
+                     <table class="table table-hover">
+                        <tbody>
+                           <tr  class="success">
+                              <td>Status poročila</td>
+                              <td>Usvarjeno (prenesi <img src="slike/pdf.png" style="display:inline; height:25px;"> )</td>
+                           </tr>
+                           <tr>
+                              <td>Status potrditve</td>
+                              <td>Nepotrjeno</td>
+                           </tr>
+                           <tr>
+                              <td>Ustvaril/Spremenil</td>
+                              <td>Aljoša Pegan</td>
+                           </tr>
+                           <tr>
+                              <td>Zadnje spremembe</td>
+                              <td>ponedeljek, 12.9.2016 7:50</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+               <div class="panel panel-info">
+                  <div class="panel-heading">Filetiranje SZD</div>
+                  <div class="panel-body">
+                     <table class="table table-hover">
+                        <tbody>
+                           <tr class="danger">
+                              <td>Status poročila</td>
+                              <td>Ni podatkov</td>
+                           </tr>
+                           <tr>
+                              <td>Status potrditve</td>
+                              <td>Nepotrjeno</td>
+                           </tr>
+                           <tr>
+                              <td>Ustvaril/Spremenil</td>
+                              <td>Aljoša Pegan</td>
+                           </tr>
+                           <tr>
+                              <td>Zadnje spremembe</td>
+                              <td>ponedeljek, 12.9.2016 7:50</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+               <div class="panel panel-info">
+                  <div class="panel-heading">Filetiranje beder</div>
+                  <div class="panel-body">
+                     <table class="table table-hover">
+                        <tbody>
+                           <tr  class="success">
+                              <td>Status poročila</td>
+                              <td>Usvarjeno (prenesi <img src="slike/pdf.png" style="display:inline; height:25px;"> )</td>
+                           </tr>
+                           <tr>
+                              <td>Status potrditve</td>
+                              <td>Nepotrjeno</td>
+                           </tr>
+                           <tr>
+                              <td>Ustvaril/Spremenil</td>
+                              <td>Aljoša Pegan</td>
+                           </tr>
+                           <tr>
+                              <td>Zadnje spremembe</td>
+                              <td>ponedeljek, 12.9.2016 7:50</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--/.row-->
+         <!-- KLAVNICA -->
+         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+               <div class="panel panel-info" >
+                  <div class="panel-heading">
+                     <span>Klavnica</span>
+                  </div>
+                  <div class="panel-body">
+                     <div class="alert alert-success">
+                        Prosimo, da vnesete zahtevane podatke za prejšnji dan, vnašanje je mogoče do 8:00.
+                        <button type="button" class="btn btn-success" style="float:right; margin-top:10px,"><span class="glyphicon glyphicon-plus"></span> Vnesi podatke </button>
+                     </div>
+                     <div >
+                        <h4>Poročilo (ponedeljek, 12.9.2016)</h4>
+                        <br>
+                     </div>
+                     <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                           <table class="table table-hover">
+                              <tbody>
+                                 <tr>
+                                    <td>Oddelek</td>
+                                    <td>Klavnica</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Status potrditve</td>
+                                    <td>Nepotrjeno</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Ustvaril/Spremenil</td>
+                                    <td>Aljoša Pegan</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Zadnje spremembe</td>
+                                    <td>ponedeljek, 12.9.2016 7:50</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                     <br>
+                     <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                           <table class="table table-hover">
+                              <tbody>
+                                 <tr>
+                                    <td>Komadi zaklani</td>
+                                    <td>4000 kom.</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Porabljene ure</td>
+                                    <td>5 ur</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Normativ produktivnosti</td>
+                                    <td>4300</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Dejanska produktivnost</td>
+                                    <td>4120</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
 
-			    
-			    </div>
-			</div>
-		
+         <!-- FILETIRANJE PRSA -->
+         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+               <div class="panel panel-info" >
+                  <div class="panel-heading">
+                     <span>Filetiranje prsa</span>
+                  </div>
+                  <div class="panel-body">
+                     <div class="alert alert-success">
+                        Prosimo, da vnesete zahtevane podatke za prejšnji dan, vnašanje je mogoče do 8:00.
+                        <button type="button" class="btn btn-success" style="float:right; margin-top:10px,">
+                        <span class="glyphicon glyphicon-plus"></span> Vnesi podatke </button>
+                     </div>
+                    
+                     <div class="row">
+                     	 
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	                        <div >
+	                        	<h4>Poročilo (ponedeljek, 12.9.2016) - I. izmena</h4>
+	                        	<br>
+	                     	</div>
+                           <table class="table table-hover">
+                              <tbody>
+                                 <tr>
+                                    <td>Oddelek</td>
+                                    <td>Filetiranje prsa</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Status potrditve</td>
+                                    <td>Nepotrjeno</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Ustvaril/Spremenil</td>
+                                    <td>Aljoša Pegan</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Zadnje spremembe</td>
+                                    <td>ponedeljek, 12.9.2016 7:50</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
 
-	</div>	<!--/.main-->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        	<div >
+	                        	<h4>Poročilo (ponedeljek, 12.9.2016) - II. izmena</h4>
+	                        	<br>
+	                     	</div>
+                           <table class="table table-hover">
+                              <tbody>
+                                 <tr>
+                                    <td>Oddelek</td>
+                                    <td>Filetiranje prsa</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Status potrditve</td>
+                                    <td>Nepotrjeno</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Ustvaril/Spremenil</td>
+                                    <td>Aljoša Pegan</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Zadnje spremembe</td>
+                                    <td>ponedeljek, 12.9.2016 7:50</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                     <br>
+                     <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                           <table class="table table-hover">
+                              <tbody>
+                                 <tr>
+                                    <td>Teža prsi (vhodno)</td>
+                                    <td>4000 kg</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Teža file (vhodno)</td>
+                                    <td>3000 kg</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Izplen</td>
+                                    <td>92%</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Delež obreznin</td>
+                                    <td>8%</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Normativ produktivnosti</td>
+                                    <td>155 kg/h</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Dejanska produktivnost</td>
+                                    <td>140 kg/h</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                           <table class="table table-hover">
+                              <tbody>
+                                 <tr>
+                                    <td>Teža prsi (vhodno)</td>
+                                    <td>4000 kg</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Teža file (vhodno)</td>
+                                    <td>3000 kg</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Izplen</td>
+                                    <td>92%</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Delež obreznin</td>
+                                    <td>8%</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Normativ produktivnosti</td>
+                                    <td>155 kg/h</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Dejanska produktivnost</td>
+                                    <td>140 kg/h</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
 
 
-
-</body>
-
+      </div>
+      <!--/.main-->
+   </body>
 </html>
+
