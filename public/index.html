@@ -14,7 +14,11 @@
       <script src="knjiznice/jQuery-v2.1.4/jQuery-v2.1.4.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/koda.js"></script>
+
+
+
    </head>
+
    <body style="">
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="padding-top:5px; padding-bottom:5px;">
          <div class="container-fluid">
@@ -44,37 +48,38 @@
      <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		
 		<ul class="nav menu" style="margin-top:25px;" >
-			<li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span> Glavna stran</a></li>
+			<li class="link" id="glavnaStran-povezava" ><a  href="#"><span class="glyphicon glyphicon-home"></span> Glavna stran</a></li>
 
 			<li class="parent ">
 				<a href="#">
 					<span data-toggle="collapse" href="#sub-item-1" id="oddelki"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Oddelki
 				</a>
 				<ul class="children collapse" id="sub-item-1">
-					<li>
-						<a class="" href="#">
+					<li class="link active" id="klavnica-povezava">
+						<a  class="" href="#">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Klavnica
 						</a>
 					</li>
-					<li>
-						<a class="" href="#">
+					<li class="link" id="filetiranjePrsa-povezava">
+						<a  class="" href="#">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Filetiranje prsa
 						</a>
 					</li>
-					<li>
-						<a class="" href="#">
+					<li class="link" id="filetiranjeSZD-povezava">
+						<a  class="" href="#">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Filetiranje SZD
 						</a>
 					</li>
-					<li>
-						<a class="" href="#">
+					<li class="link" id="filetiranjeBeder-povezava">
+						<a  class="" href="#">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Filetiranje beder
 						</a>
 					</li>
+					
 				</ul>
 			</li>
 
-			<li><a href="widgets.html"><span class="glyphicon glyphicon-inbox"></span> Arhiv poročil</a></li>
+			<li><a id="arhivPorocil-povezava active" href=""><span class="glyphicon glyphicon-inbox"></span> Arhiv poročil</a></li>
 			
 			
 			
@@ -83,10 +88,12 @@
 	</div>
 
       <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-         <div class="row" style="margin-top:25px;">
+         
+         <div id="glavnaStran" class="row" style="margin-top:25px;">
+            
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-               <div class="panel panel-info" >
-                  <div class="panel-heading"><span>Klavnica</span></div>
+               <div  class="panel panel-info" >
+                  <div id="glavnaStran-klavnica" class="panel-heading link"><span>Klavnica</span></div>
                   <div class="panel-body">
                      <table class="table table-hover">
                         <tbody>
@@ -112,8 +119,8 @@
                </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-               <div class="panel panel-info">
-                  <div class="panel-heading">Filetiranje prsa</div>
+               <div  class="panel panel-info ">
+                  <div id="glavnaStran-filetiranjePrsa" class="panel-heading link">Filetiranje prsa</div>
                   <div class="panel-body">
                      <table class="table table-hover">
                         <tbody>
@@ -139,8 +146,8 @@
                </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-               <div class="panel panel-info">
-                  <div class="panel-heading">Filetiranje SZD</div>
+               <div  class="panel panel-info">
+                  <div id="glavnaStran-filetiranjeSZD" class="panel-heading link">Filetiranje SZD</div>
                   <div class="panel-body">
                      <table class="table table-hover">
                         <tbody>
@@ -166,8 +173,8 @@
                </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-               <div class="panel panel-info">
-                  <div class="panel-heading">Filetiranje beder</div>
+               <div  class="panel panel-info ">
+                  <div id="glavnaStran-filetiranjeBeder" class="panel-heading link">Filetiranje beder</div>
                   <div class="panel-body">
                      <table class="table table-hover">
                         <tbody>
@@ -194,8 +201,9 @@
             </div>
          </div>
          <!--/.row-->
+
          <!-- KLAVNICA -->
-         <div class="row">
+         <div id="klavnica" class="row" style="margin-top:25px;">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                <div class="panel panel-info" >
                   <div class="panel-heading">
@@ -204,7 +212,7 @@
                   <div class="panel-body">
                      <div class="alert alert-success">
                         Prosimo, da vnesete zahtevane podatke za prejšnji dan, vnašanje je mogoče do 8:00.
-                        <button type="button" class="btn btn-success" style="float:right; margin-top:10px,"><span class="glyphicon glyphicon-plus"></span> Vnesi podatke </button>
+                        <button type="button" data-toggle="modal" data-target="#modal-klavnica" class="btn btn-success" style="float:right; margin-top:-6px;" ><span class="glyphicon glyphicon-plus"></span> Vnesi podatke </button>
                      </div>
                      <div >
                         <h4>Poročilo (ponedeljek, 12.9.2016)</h4>
@@ -215,7 +223,7 @@
                            <table class="table table-hover">
                               <tbody>
                                  <tr>
-                                    <td>Oddelek</td>
+                                    <td style="width:40%;">Oddelek</td>
                                     <td>Klavnica</td>
                                  </tr>
                                  <tr>
@@ -240,7 +248,7 @@
                            <table class="table table-hover">
                               <tbody>
                                  <tr>
-                                    <td>Komadi zaklani</td>
+                                    <td style="width:40%;">Komadi zaklani</td>
                                     <td>4000 kom.</td>
                                  </tr>
                                  <tr>
@@ -264,144 +272,521 @@
             </div>
          </div>
 
+         <div id="modal-klavnica" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Podatki za klavnico</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Some text in the modal.</p>
+		      </div>
+		      <div class="modal-footer">
+		      	<button type="button" class="btn btn-success" data-dismiss="modal" style="float:left;">Shrani</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+
          <!-- FILETIRANJE PRSA -->
-         <div class="row">
+         <div id="filetiranjePrsa" class="row" style="margin-top:25px;">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
                <div class="panel panel-info" >
                   <div class="panel-heading">
                      <span>Filetiranje prsa</span>
                   </div>
                   <div class="panel-body">
-                     <div class="alert alert-success">
-                        Prosimo, da vnesete zahtevane podatke za prejšnji dan, vnašanje je mogoče do 8:00.
-                        <button type="button" class="btn btn-success" style="float:right; margin-top:10px,">
-                        <span class="glyphicon glyphicon-plus"></span> Vnesi podatke </button>
-                     </div>
-                    
-                     <div class="row">
-                     	 
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-	                        <div >
-	                        	<h4>Poročilo (ponedeljek, 12.9.2016) - I. izmena</h4>
-	                        	<br>
-	                     	</div>
-                           <table class="table table-hover">
-                              <tbody>
-                                 <tr>
-                                    <td>Oddelek</td>
-                                    <td>Filetiranje prsa</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Status potrditve</td>
-                                    <td>Nepotrjeno</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Ustvaril/Spremenil</td>
-                                    <td>Aljoša Pegan</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Zadnje spremembe</td>
-                                    <td>ponedeljek, 12.9.2016 7:50</td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
+                    	<div class="alert alert-success">
+	                        Prosimo, da vnesete zahtevane podatke za prejšnji dan, vnašanje je mogoče do 8:00.
+	                        <button type="button" data-toggle="modal" data-target="#modal-filetiranjePrsa" class="btn btn-success"  style="float:right; margin-top:-6px;">
+	                        <span class="glyphicon glyphicon-plus"></span> Vnesi podatke </button>
+	                     </div>
+                    	<div class="row">
+            				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+            					<div>
+		                        	<h4>Poročilo (ponedeljek, 12.9.2016) - I. izmena</h4>
+		                        	<br>
+	                     		</div>
+	                           <table class="table table-hover">
+	                              <tbody>
+	                                 <tr>
+	                                    <td style="width:40%;">Oddelek</td>
+	                                    <td>Filetiranje prsa</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Status potrditve</td>
+	                                    <td>Nepotrjeno</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Ustvaril/Spremenil</td>
+	                                    <td>Aljoša Pegan</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Zadnje spremembe</td>
+	                                    <td>ponedeljek, 12.9.2016 7:50</td>
+	                                 </tr>
+	                              </tbody>
+	                           </table>
+	                           <br>
+	                            <table class="table table-hover">
+	                              <tbody>
+	                                 <tr>
+	                                    <td style="width:40%;">Teža prsi (vhodno)</td>
+	                                    <td>4000 kg</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Teža file (vhodno)</td>
+	                                    <td>3000 kg</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Izplen</td>
+	                                    <td>92%</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Delež obreznin</td>
+	                                    <td>8%</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Normativ produktivnosti</td>
+	                                    <td>155 kg/h</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Dejanska produktivnost</td>
+	                                    <td>140 kg/h</td>
+	                                 </tr>
+	                              </tbody>
+	                           </table>
+            				</div>
 
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        	<div >
-	                        	<h4>Poročilo (ponedeljek, 12.9.2016) - II. izmena</h4>
-	                        	<br>
-	                     	</div>
-                           <table class="table table-hover">
-                              <tbody>
-                                 <tr>
-                                    <td>Oddelek</td>
-                                    <td>Filetiranje prsa</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Status potrditve</td>
-                                    <td>Nepotrjeno</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Ustvaril/Spremenil</td>
-                                    <td>Aljoša Pegan</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Zadnje spremembe</td>
-                                    <td>ponedeljek, 12.9.2016 7:50</td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
-                     </div>
-                     <br>
-                     <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                           <table class="table table-hover">
-                              <tbody>
-                                 <tr>
-                                    <td>Teža prsi (vhodno)</td>
-                                    <td>4000 kg</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Teža file (vhodno)</td>
-                                    <td>3000 kg</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Izplen</td>
-                                    <td>92%</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Delež obreznin</td>
-                                    <td>8%</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Normativ produktivnosti</td>
-                                    <td>155 kg/h</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Dejanska produktivnost</td>
-                                    <td>140 kg/h</td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                           <table class="table table-hover">
-                              <tbody>
-                                 <tr>
-                                    <td>Teža prsi (vhodno)</td>
-                                    <td>4000 kg</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Teža file (vhodno)</td>
-                                    <td>3000 kg</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Izplen</td>
-                                    <td>92%</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Delež obreznin</td>
-                                    <td>8%</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Normativ produktivnosti</td>
-                                    <td>155 kg/h</td>
-                                 </tr>
-                                 <tr>
-                                    <td>Dejanska produktivnost</td>
-                                    <td>140 kg/h</td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
+            				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+            					<div>
+		                        	<h4>Poročilo (ponedeljek, 12.9.2016) - II. izmena</h4>
+		                        	<br>
+	                     		</div>
+	                           <table class="table table-hover">
+	                              <tbody>
+	                                 <tr>
+	                                    <td style="width:40%;">Oddelek</td>
+	                                    <td>Filetiranje prsa</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Status potrditve</td>
+	                                    <td>Nepotrjeno</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Ustvaril/Spremenil</td>
+	                                    <td>Aljoša Pegan</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Zadnje spremembe</td>
+	                                    <td>ponedeljek, 12.9.2016 7:50</td>
+	                                 </tr>
+	                              </tbody>
+	                           </table>
+	                           <br>
+	                            <table class="table table-hover">
+	                              <tbody>
+	                                 <tr>
+	                                    <td style="width:40%;">Teža prsi (vhodno)</td>
+	                                    <td>4000 kg</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Teža file (vhodno)</td>
+	                                    <td>3000 kg</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Izplen</td>
+	                                    <td>92%</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Delež obreznin</td>
+	                                    <td>8%</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Normativ produktivnosti</td>
+	                                    <td>155 kg/h</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Dejanska produktivnost</td>
+	                                    <td>140 kg/h</td>
+	                                 </tr>
+	                              </tbody>
+	                           </table>
+            				</div>
+            			</div>
+                     
                      </div>
                   </div>
                </div>
             </div>
-         </div>
+ 		
+ 			<div id="modal-filetiranjePrsa" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Podatki za oddelek filetiranje prs</h4>
+			      </div>
+			      <div class="modal-body">
+			        <p>Some text in the modal.</p>
+			      </div>
+			      <div class="modal-footer">
+			      	<button type="button" class="btn btn-success" data-dismiss="modal" style="float:left;">Shrani</button>
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+
+         <!-- FILETIRANJE SZD -->
+
+         <div id="filetiranjeSZD" class="row" style="margin-top:25px;">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+               <div class="panel panel-info" >
+                  <div class="panel-heading">
+                     <span>Filetiranje SZD</span>
+                  </div>
+                  <div class="panel-body">
+                    	<div class="alert alert-success">
+	                        Prosimo, da vnesete zahtevane podatke za prejšnji dan, vnašanje je mogoče do 8:00.
+	                        <button type="button" class="btn btn-success" style="float:right; margin-top:-6px;">
+	                        <span class="glyphicon glyphicon-plus"></span> Vnesi podatke </button>
+	                     </div>
+                    	<div class="row">
+            				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+            					<div>
+		                        	<h4>Poročilo (ponedeljek, 12.9.2016) - I. izmena</h4>
+		                        	<br>
+	                     		</div>
+	                           <table class="table table-hover">
+	                              <tbody>
+	                                 <tr>
+	                                    <td style="width:40%;">Oddelek</td>
+	                                    <td>Filetiranje SZD</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Status potrditve</td>
+	                                    <td>Nepotrjeno</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Ustvaril/Spremenil</td>
+	                                    <td>Aljoša Pegan</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Zadnje spremembe</td>
+	                                    <td>ponedeljek, 12.9.2016 7:50</td>
+	                                 </tr>
+	                              </tbody>
+	                           </table>
+	                           <br>
+	                            <table class="table table-hover">
+	                              <tbody>
+	                             
+	                                 <tr>
+	                                    <td style="width:40%;">Teža file (vhodno)</td>
+	                                    <td>3000 kg</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Normativ produktivnosti</td>
+	                                    <td>155 kg/h</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Dejanska produktivnost</td>
+	                                    <td>140 kg/h</td>
+	                                 </tr>
+	                              </tbody>
+	                           </table>
+            				</div>
+
+            				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+            					<div>
+		                        	<h4>Poročilo (ponedeljek, 12.9.2016) - II. izmena</h4>
+		                        	<br>
+	                     		</div>
+	                           <table class="table table-hover">
+	                              <tbody>
+	                                 <tr>
+	                                    <td style="width:40%;">Oddelek</td>
+	                                    <td>Filetiranje SZD</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Status potrditve</td>
+	                                    <td>Nepotrjeno</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Ustvaril/Spremenil</td>
+	                                    <td>Aljoša Pegan</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Zadnje spremembe</td>
+	                                    <td>ponedeljek, 12.9.2016 7:50</td>
+	                                 </tr>
+	                              </tbody>
+	                           </table>
+	                           <br>
+	                            <table class="table table-hover">
+	                              <tbody>
+	                             
+	                                 <tr>
+	                                    <td style="width:40%;">Teža file (vhodno)</td>
+	                                    <td>3000 kg</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Normativ produktivnosti</td>
+	                                    <td>155 kg/h</td>
+	                                 </tr>
+	                                 <tr>
+	                                    <td>Dejanska produktivnost</td>
+	                                    <td>140 kg/h</td>
+	                                 </tr>
+	                              </tbody>
+	                           </table>
+
+            				</div>
+            			</div>
+                     
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- FILETIRANJE BEDRA -->
+
+            <div id="filetiranjeBeder" class="row" style="margin-top:25px;">
+	            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	            	 <div class="panel panel-info" >
+	                  	<div class="panel-heading">
+	                     	<span>Filetiranje bedra</span>
+	                  	</div>
+
+	                 	 <div class="panel-body">
+	                 	 	<div class="panel panel-info" >
+			                  	<div class="panel-heading">
+			                     	<span>Filetiranje bedra (s kožo)</span>
+			                  	</div>
+			                 	 <div class="panel-body">
+			                 	 	<div class="alert alert-success">
+				                        Prosimo, da vnesete zahtevane podatke za prejšnji dan, vnašanje je mogoče do 8:00.
+				                        <button type="button" class="btn btn-success" style="float:right; margin-top:-6px;">
+				                        <span class="glyphicon glyphicon-plus"></span> Vnesi podatke </button>
+				                     </div>
+
+				                     <div class="row">
+			            				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+			            					<div>
+					                        	<h4>Poročilo (ponedeljek, 12.9.2016) - I. izmena</h4>
+					                        	<br>
+				                     		</div>
+				                           <table class="table table-hover">
+				                              <tbody>
+				                                 <tr >
+				                                    <td style="width:40%;">Oddelek</td>
+				                                    <td>Filetiranje beder (s kožo)</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Status potrditve</td>
+				                                    <td>Nepotrjeno</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Ustvaril/Spremenil</td>
+				                                    <td>Aljoša Pegan</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Zadnje spremembe</td>
+				                                    <td>ponedeljek, 12.9.2016 7:50</td>
+				                                 </tr>
+				                              </tbody>
+				                           </table>
+				                           <br>
+				                            <table class="table table-hover">
+				                              <tbody>
+				                             
+				                                 <tr>
+				                                    <td style="width:40%;">Teža file beder (vhodno)</td>
+				                                    <td>3000 kg</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Normativ produktivnosti</td>
+				                                    <td>155 kg/h</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Dosežena produktivnost</td>
+				                                    <td>140 kg/h</td>
+				                                 </tr>
+				                              </tbody>
+				                           </table>
+			            				</div>
+
+			            				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+			            					<div>
+					                        	<h4>Poročilo (ponedeljek, 12.9.2016) - II. izmena</h4>
+					                        	<br>
+				                     		</div>
+				                           <table class="table table-hover">
+				                              <tbody>
+				                                 <tr>
+				                                    <td style="width:40%;">Oddelek</td>
+				                                    <td>Filetiranje beder (s kožo)</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Status potrditve</td>
+				                                    <td>Nepotrjeno</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Ustvaril/Spremenil</td>
+				                                    <td>Aljoša Pegan</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Zadnje spremembe</td>
+				                                    <td>ponedeljek, 12.9.2016 7:50</td>
+				                                 </tr>
+				                              </tbody>
+				                           </table>
+				                           <br>
+				                            <table class="table table-hover">
+				                              <tbody>
+				                             
+				                                 <tr>
+				                                    <td style="width:40%;">Teža file beder (vhodno)</td>
+				                                    <td>3000 kg</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Normativ produktivnosti</td>
+				                                    <td>155 kg/h</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Dosežena produktivnost</td>
+				                                    <td>140 kg/h</td>
+				                                 </tr>
+				                              </tbody>
+				                           </table>
+
+			            				</div>
+			            			</div>
+
+			                 	</div>
+
+				            </div>
+
+				            <div class="panel panel-info" >
+			                  	<div class="panel-heading">
+			                     	<span>Filetiranje bedra (brez kože)</span>
+			                  	</div>
+			                 	 <div class="panel-body">
+			                 	 	 <div class="alert alert-success">
+				                        Prosimo, da vnesete zahtevane podatke za prejšnji dan, vnašanje je mogoče do 8:00.
+				                        <button type="button" class="btn btn-success" style="float:right; margin-top:-6px;">
+				                        <span class="glyphicon glyphicon-plus"></span> Vnesi podatke </button>
+				                     </div>
+
+				                     <div class="row">
+			            				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+			            					<div>
+					                        	<h4>Poročilo (ponedeljek, 12.9.2016) - I. izmena</h4>
+					                        	<br>
+				                     		</div>
+				                           <table class="table table-hover">
+				                              <tbody>
+				                                 <tr>
+				                                    <td style="width:40%;">Oddelek</td>
+				                                    <td>Filetiranje beder (brez kože)</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Status potrditve</td>
+				                                    <td>Nepotrjeno</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Ustvaril/Spremenil</td>
+				                                    <td>Aljoša Pegan</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Zadnje spremembe</td>
+				                                    <td>ponedeljek, 12.9.2016 7:50</td>
+				                                 </tr>
+				                              </tbody>
+				                           </table>
+				                           <br>
+				                            <table class="table table-hover">
+				                              <tbody>
+				                             
+				                                 <tr>
+				                                    <td style="width:40%;">Teža file beder (vhodno)</td>
+				                                    <td>3000 kg</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Normativ produktivnosti</td>
+				                                    <td>155 kg/h</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Dosežena produktivnost</td>
+				                                    <td>140 kg/h</td>
+				                                 </tr>
+				                              </tbody>
+				                           </table>
+			            				</div>
+
+			            				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+			            					<div>
+					                        	<h4>Poročilo (ponedeljek, 12.9.2016) - II. izmena</h4>
+					                        	<br>
+				                     		</div>
+				                           <table class="table table-hover">
+				                              <tbody>
+				                                 <tr>
+				                                    <td style="width:40%;">Oddelek</td>
+				                                    <td>Filetiranje beder (brez kože)</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Status potrditve</td>
+				                                    <td>Nepotrjeno</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Ustvaril/Spremenil</td>
+				                                    <td>Aljoša Pegan</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Zadnje spremembe</td>
+				                                    <td>ponedeljek, 12.9.2016 7:50</td>
+				                                 </tr>
+				                              </tbody>
+				                           </table>
+				                           <br>
+				                            <table class="table table-hover">
+				                              <tbody>
+				                             
+				                                 <tr>
+				                                    <td style="width:40%;">Teža file beder (vhodno)</td>
+				                                    <td>3000 kg</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Normativ produktivnosti</td>
+				                                    <td>155 kg/h</td>
+				                                 </tr>
+				                                 <tr>
+				                                    <td>Dosežena produktivnost</td>
+				                                    <td>140 kg/h</td>
+				                                 </tr>
+				                              </tbody>
+				                           </table>
+
+			            				</div>
+			            			</div>
+			                 	</div>
+				            </div>
+
+	                 	</div>
+		            </div>
+            </div>
 
 
       </div>

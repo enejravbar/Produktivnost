@@ -37,6 +37,24 @@ h2 {
 h3, h4 {
 	font-weight: 300;
 }
+.link {
+	position:relative;
+}
+
+.link:hover:after {
+	position:absolute;
+	background: #000;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.075;
+    position: absolute;
+    top: 0;
+    width: 100%;
+	cursor:pointer;
+
+}
 
 .large {
 	font-size: 2em;
